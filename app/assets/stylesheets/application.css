@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+h1 {
+  color: blue;
+  font-size: 100px;
+}
+
+p {
+  color: green;
+}
+
+.otters {
+  background-color: red;
+}
+
+#exhibits {
+  background-color: yellow;
+}
