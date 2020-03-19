@@ -19,15 +19,3 @@ RSpec.describe "as a visitor", type: :feature do
     expect(page).to have_content("Play Count: #{song_2.play_count}")
   end
 end
-
-
-# class methods 
-# - calling methods on a collection (collection could be any amount greater than 1)
-#     - all of the songs
-#     - all of carly rae's songs
-#         - carly_rae.songs.average_length
-#
-# Instance methods
-# - calling methods on one object
-#   - artist method that you could call on artist to get back average playcount of all of their songs
-#     - artist.avg_play_count_of_songs
