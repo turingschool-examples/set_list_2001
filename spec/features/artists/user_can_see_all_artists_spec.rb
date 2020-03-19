@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "As a visitor when I visit '/artists'", type: :feature do
   it "I see a list of all artist names" do
     carly_rae = Artist.create(name: "Carly Rae")
-    bon_jovi = Artist.create(name: "Livin' on a Prayer")
+    bon_jovi = Artist.create(name: "Bon Jovi")
 
     visit '/artists'
 
