@@ -9,8 +9,8 @@ RSpec.describe "As a visitor when I visit '/artists'", type: :feature do
   end
 
   it "I see a list of all artist names in alphabetical order" do
-    expect(page.all('#artist-*')[0]).to have_content(@bon_jovi.name)
-    expect(page.all('#artist-*')[1]).to have_content(@carly_rae.name)
+    expect(page.all('.individual-artist')[0]).to have_content(@bon_jovi.name)
+    expect(page.all('.individual-artist')[1]).to have_content(@carly_rae.name)
 
     within '.artist-names-list' do
       within "#artist-#{@carly_rae.id}" do

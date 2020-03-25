@@ -2,8 +2,8 @@
 
 <section class = "artist-names-list">
   <% @artists.each do |artist| %>
-    <section id = "artist-<%= artist.id %>" >
-      <p><%= artist.name %> <%= link_to "Delete", "/artists/#{artist.id}", method: :delete  %></p>
+    <section id = "artist-<%= artist.id %>" class = "individual-artist" >
+      <%= artist.name %> <%= link_to "Delete", "/artists/#{artist.id}", method: :delete  %>
     </section>
   <% end %>
 </section>
