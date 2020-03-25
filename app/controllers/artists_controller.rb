@@ -12,8 +12,15 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    new_artist = Artist.create(artist_params)
-    redirect_to "/artists/#{new_artist.id}"
+    new_artist = Artist.new(artist_params)
+
+    if new_artist.save
+      redirect_to "/artists/#{new_artist.id}"
+      flash[:success] = "Success!"
+    else
+      flash[:notice] = "Artist not created: Required information missing."
+      render :new
+    end
   end
 
   def destroy
