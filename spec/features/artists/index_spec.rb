@@ -7,8 +7,15 @@ RSpec.describe "As a visitor when I visit '/artists'", type: :feature do
 
     visit '/artists'
 
-    expect(page).to have_content(carly_rae.name)
-    expect(page).to have_content(bon_jovi.name)
+    within '.artist-names-list' do
+      within "#artist-#{carly_rae.id}" do
+        expect(page).to have_content(carly_rae.name)
+        expect(page).to_not have_content(bon_jovi.name)
+      end
+      within "#artist-#{bon_jovi.id}" do
+        expect(page).to have_content(bon_jovi.name)
+      end 
+    end
   end
 end
 
