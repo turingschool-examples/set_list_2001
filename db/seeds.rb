@@ -13,7 +13,7 @@ Artist.destroy_all
 #artists
 talking_heads = Artist.create(name: "Talking Heads")
 prince = Artist.create(name: "Prince")
-garbage = Artist.create(name: "Zac Brown Band"
+garbage = Artist.create(name: "Zac Brown Band")
 
 
 #songs

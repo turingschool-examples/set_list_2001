@@ -17,8 +17,6 @@ ActiveRecord::Schema.define(version: 20200324163726) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "playlist_songs", force: :cascade do |t|
@@ -40,8 +38,6 @@ ActiveRecord::Schema.define(version: 20200324163726) do
     t.string "title"
     t.integer "length"
     t.integer "play_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.bigint "artist_id"
     t.index ["artist_id"], name: "index_songs_on_artist_id"
   end
