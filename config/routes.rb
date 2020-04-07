@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   get '/fancy', to: 'songs#fancy'
 
+  namespace :admin do
+    get '/dashboard', to: "dashboard#index"
+  end
+
   get '/users/new', to: 'users#new'
   post '/users', to: 'users#create'
 
@@ -15,9 +19,9 @@ Rails.application.routes.draw do
   get '/songs/:id', to: 'songs#show'
 
   get '/artists', to: 'artists#index'
+  get '/artists/:id', to: 'artists#show'
   get '/artists/new', to: 'artists#new'
   post '/artists', to: 'artists#create'
-  get '/artists/:id', to: 'artists#show'
   delete '/artists/:id', to: 'artists#destroy'
   get '/artists/:id/edit', to: 'artists#edit'
   put '/artists/:id', to: 'artists#update'
