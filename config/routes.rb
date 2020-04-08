@@ -1,14 +1,27 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
 
   get '/fancy', to: 'songs#fancy'
+
+  namespace :admin do
+    get '/dashboard', to: "dashboard#index"
+  end
+
+  get '/users/new', to: 'users#new'
+  post '/users', to: 'users#create'
+
+  get '/profile', to: 'users#show'
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
 
   get '/songs', to: 'songs#index'
   get '/songs/:id', to: 'songs#show'
 
   get '/artists', to: 'artists#index'
+  get '/artists/:id', to: 'artists#show'
   get '/artists/new', to: 'artists#new'
   post '/artists', to: 'artists#create'
-  get '/artists/:id', to: 'artists#show'
   delete '/artists/:id', to: 'artists#destroy'
   get '/artists/:id/edit', to: 'artists#edit'
   patch '/artists/:id', to: 'artists#update'
